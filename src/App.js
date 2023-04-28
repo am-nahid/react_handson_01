@@ -8,8 +8,8 @@ export class App extends React.Component {
   constructor(props){
     super(props)
     this.state={
-    showFunctionalComponent: true,
-    showClassComponent: true
+    showFunctionalComponent: false,
+    showClassComponent: false
   }
 }
 
@@ -28,10 +28,14 @@ toggleClassComp =()=>{
   return (
     <div className="App">
       <h1 className='mainHead'>Styling using Functional and Class Component</h1>
+      <div className='flexBox1'>
       <button onClick={this.toggleFuncComp} className="button1">To see styling in Functional Component</button>
       <button onClick={this.toggleClassComp} className="button2"> To see styling in Class Component</button>
+      </div>
+      <div className='flexBox2'>
      {this.state.showFunctionalComponent && <FunctionalCompo/>}
      {this.state.showClassComponent && <ClassComponent/>}
+     </div>
     </div>
   );
   }
